@@ -1,364 +1,388 @@
-/* TURN ON TEXT SHADOWS TO HAVE A GLOWING TEXT EFFECT */
-
-
-/* Color-scheme */
-@import './colors/Tokyonight.css';
-/*@import './colors/Tokyonight-Rev.css';*/
-
 * {
-  border: none;
-  background: transparent;
-  padding-left: 2px;
-  padding-right: 2px;
-  /*font-family: VictorMono, Iosevka Nerd Font, Noto Sans CJK;*/
-  /* font-family: Iosevka, FontAwesome, Noto Sans CJK;*/
-  font-family: "JetBrainsMono Nerd Font";
+  font-family: "Iosevka Nerd Font";
+  font-weight: bold;
   font-size: 15px;
-  font-style: normal;
   min-height: 0;
-  opacity: 0.95;
 }
+
+@import "theme.css";
+
+/* === Main Background === */
 
 window#waybar {
-  background: transparent;
-  /*background: @bg-color;*/
-  /*border-bottom: 1px solid @bg-color-secondary;*/
-  /*color: @text-color-primary;*/
+  background: @main-bg;
 }
 
-#workspaces {
-  background: @bg-color;
-  /*opacity: 0.65;*/
-  margin: 5px 10px 5px 10px;
-  padding: 0px 5px 0px 5px;
-  /* box-shadow: 0 0 8px 2px @muted-text-color;*/
-  /* Pink glow */
-  border-radius: 16px;
-  border: solid 2px @border-color;
-  font-weight: bold;
-  font-style: normal;
-  /* text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color;*/
+/* === Drop Shadow === */
+
+window#waybar > box {
+  background-color: transparent;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 1);
+  margin: 2px;
 }
+
+/* === Tooltip === */
+
+tooltip {
+  color: @main-fg;
+  background: @main-bg;
+  border: solid;
+  border-width: 1.5px;
+  border-radius: 0;
+  border-color: @main-br;
+}
+
+/* === Workspace Buttons === */
 
 #workspaces button {
-  padding: 0px 5px;
-  border-radius: 16px;
-  color: @border-color;
+  color: @module-fg;
+  border-radius: 8px;
+  box-shadow: none;
+  margin: 2px 0;
+  padding: 0 2px;
+  transition: none;
 }
-
-#workspaces button.active {
-  color: @text-color;
-  background-color: @bg-hover-color;
-  border-radius: 16px;
-}
-
 #workspaces button:hover {
-  background-color: @bg-hover-color;
-  color: black;
-  border-radius: 16px;
+  color: @hover-fg;
+  background: @hover-bg;
+  text-shadow: none;
+  box-shadow: none;
 }
-tooltip {
-    background : @bg-hover;
+#workspaces button.active {
+  color: @active-fg;
+  background: @active-bg;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
+  margin: 2px;
+  padding: 0 6px;
 }
-#clock.calendar:hover{
-   background-color: @bg-hover; 
-   color: @text-color;
-}
-#backlight:hover{
-   background-color: @bg-hover; 
-   color: @text-color;
-}
-#memory:hover{
-   background-color: @bg-hover; 
-   color: @text-color;
-}
-#cpu:hover{
-   background-color: @bg-hover; 
-   color: @text-color;
-}
-#battery.icon:hover{
-   background-color: @bg-hover; 
-   color: @text-color;
-}
-#pulseaudio:hover{
-   background-color: @bg-hover; 
-   color: @text-color;
-}
-#pulseaudio.microphone:hover{
-   background-color: @bg-hover; 
-   color: @text-color;
-}
-#disk:hover{
-   background-color: @bg-hover; 
-   color: @text-color;
-}
-#tray:hover{
-   background-color: @bg-hover; 
-   color: @text-color;
-}
-#custom-date,
+
+/* === General === */
+
+#custom-ws,
+#workspaces,
+#window,
+#custom-cpuinfo,
+#memory,
+#custom-cpu,
 #clock,
+#custom-wifi,
+#bluetooth,
+#custom-update,
+#custom-media,
 #pulseaudio,
-#custom-randwall,
-#custom-launcher,
+#custom-backlight,
 #battery,
-#battery.icon {
-  background: @bg-color;
-  padding: 0px 0px 0px 0px;
-  margin: 0px 0px 0px 0px;
-  /* border-bottom: solid 1px @border-color-primary;
- */
-}
-
 #custom-power {
-  color: @text-color;
-  background: @bg-color;
-  margin: 5px 5px 5px 5px;
-  padding: 0px 0px 0px 0px;
-  border-radius: 16px;
-  /*  border: solid 2px @text-color-primary; */
-  font-weight: normal;
-  font-style: normal;
+  opacity: 1;
+  color: @module-fg;
+  margin-bottom: 0;
+  padding: 0 4px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
 }
 
-#tray {
-  color: @text-color;
-  background-color: @bg-color;
-  border: 2px solid @border-color;
-  border-right: none;
-  border-radius: 12px 0px 0px 12px;
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
-  font-weight: bold;
-  border-right: solid 1px @border-color;
-  text-shadow: 0 0 5px @text-color, 0 0 5px @text-color;
+#custom-left1{
+  font-size: 15pt;
+}
+#custom-left2{
+
+  font-size: 15pt;
+}
+#custom-left3{
+
+  font-size: 15pt;
+}
+#custom-left4{
+
+  font-size: 15pt;
+}
+#custom-left5{
+
+  font-size: 15pt;
+}
+#custom-left6{
+
+  font-size: 15pt;
+}
+#custom-left7{
+  font-size: 15pt;
+}
+#custom-left8 {
+  font-size: 15pt;
+  text-shadow: -2px 0 2px rgba(0, 0, 0, 0.5);
 }
 
-#clock {
-  color: @text-color;
-  background-color: @bg-color;
-  border: 2px solid @border-color;
-  border-right: 1px solid @border-color;
-  border-radius: 12px 0px 0px 12px;
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
-  font-weight: bold;
-  /* text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color; # Turn this on to make it look like its glowing. */
-  /*border-left: solid 1px #282738;*/
+#custom-right1{
+  font-size: 15pt;
 }
-
-
-#clock.calendar {
-  color: @text-color;
-  background-color: @bg-color;
-  border: 2px solid @border-color;
-  border-radius: 0px 0px 0px 0px;
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
-  font-weight: bold;
-  border-right: 1px solid @border-color;
-  /*  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color; */
+#custom-right2{
+  font-size: 15pt;
 }
-
-#backlight {
-  color: @text-color;
-  background-color: @bg-color;
-  border: 2px solid @border-color;
-  border-right: none;
-  border-radius: 0px 0px 0px 0px;
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
-  font-weight: bold;
-  border-right: solid 1px @border-color;
-  /*  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color; */
+#custom-right3{
+  font-size: 15pt;
 }
-
-
-#battery {
-  color: @text-color;
-  background-color: @bg-color;
-  border: 1px solid @border-color;
-  border-right: none;
-  border-radius: 10px 0px 0px 10px;
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 15px;
-  border-bottom: solid 1px @border-color;
-  border-bottom-left-radius: 20px;
-  font-weight: bold;
+#custom-right4{
+  font-size: 15pt;
 }
-
-#battery.icon {
-  color: @text-color;
-  background-color: @bg-color;
-  border: 2px solid @border-color;
-  border-right: none;
-  border-radius: 0px 12px 12px 0px;
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
-  font-weight: bold;
-  border-right: solid 1px @border-color;
-  /*  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color; */
-}
-
-#battery.charging {
-  color: @text-color;
-}
-
-#battery.warning:not(.charging) {
-  background-color: #f7768e;
-  color: @power-text-color;
-  border-radius: 5px 5px 5px 5px;
-}
-
-
-#pulseaudio {
-  color: @text-color;
-  background-color: @bg-color;
-  border: 2px solid @border-color;
-  border-right: none;
-  border-radius: 0px 0px 0px 0px;
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
-  font-weight: bold;
-  border-right: solid 1px @border-color;
-  /*  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color; */
-}
-
-#pulseaudio.microphone {
-  color: @text-color;
-  background-color: @bg-color;
-  border: 2px solid @border-color;
-  border-right: none;
-  border-radius: 0px 0px 0px 0px;
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
-  font-weight: bold;
-  border-right: solid 1px @border-color;
-  /* text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color; */
-}
-
-
-#pulseaudio.muted {
-  color: @text-color;
-  background-color: @bg-color;
-  border: 2px solid @border-color;
-  border-right: none;
-  border-radius: 0px 0px 0px 0px;
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
-  font-weight: bold;
-  border-right: solid 1px @text-color-primary;
-  /*  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color; */
-
-}
-
-#pulseaudio.microphone.muted {
-  color: @text-color;
-  border: 1px solid @border-color;
-  border-left: none;
-  border-radius: 0px 20px 10px 0px;
-
-}
-
-@keyframes blink-update {
-  to {
-    background-color: dodgerblue;
-  }
-}
-
-#custom-pacman {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#custom-pacman.pending-updates {
-  animation-name: blink-update;
-  animation-duration: 3s;
-}
-
-#custom-updates {
-  background-color: @bg-color;
-  color: @text-color;
-  padding-right: 10px;
-
-}
-
-#custom-playerctl {
-  background-color: @bg-color;
-  /*border: 2px solid @text-color-primary;
-  border-radius: 12px 12px 12px 12px;
-  padding: 0px 7px 0px 0px;
-  margin: 5px 5px 5px 5px;
-  border-bottom: solid 1px  @border-color-primary;*/
-  margin: 5px 5px 5px 5px;
-  padding: 0px 5px 0px 5px;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 10px;
-  /*  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color; */
-}
-
-#custom-playerlabel {
-  color: @text-color;
-  background: @bg-color;
-  padding-left: 6px;
+#custom-right5 {
+  font-size: 15pt;
   padding-right: 3px;
-  border-radius: 12px;
-  /*border-left: solid 1px #282738;*/
-  /*border-right: solid 1px #282738;*/
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 9px;
-  text-shadow: 0 0 5px @bg-hover-color, 0 0 5px @bg-hover-color;
+  text-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
 }
 
-#window {
-  background: @bg-color;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 16px;
-  /*border-left: solid 1px #282738;*/
-  /*border-right: solid 1px #282738;*/
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-weight: normal;
-  font-style: normal;
+/* === Modules === */
+
+/* == Window Icon == */
+
+#custom-ws {
+  background: @main-bg;
 }
 
-#cpu {
-  color: @text-color;
-  background-color: @bg-color;
-  border: 2px solid @border-color;
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
-  font-weight: bold;
-  border-right: 1px solid @border-color;
-  /*  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color; */
+/* == Workspaces == */
+
+#custom-left1 {
+  color: @workspaces;
+  background: @main-bg;
+  padding-left: 2px;
+}
+#workspaces {
+  background: @workspaces;
+}
+#custom-right1 {
+  color: @workspaces;
+  background: @main-bg;
+  text-shadow: 3px 0 2px rgba(0, 0, 0, 0.4);
 }
 
+/* == Temperature == */
+
+#custom-paddc {
+  padding-right: 22px;
+}
+#custom-left2 {
+  color: @cpuinfo;
+  background: @main-bg;
+  border-radius: 10px;
+  padding-left: 3px;
+}
+#custom-cpuinfo {
+  background: @cpuinfo;
+  padding-left: 1px;
+  padding-right: 0;
+}
+
+/* == Memory == */
+
+#custom-left3 {
+  color: @memory;
+  background: @cpuinfo;
+  padding-left: 3px;
+}
 #memory {
-  color: @text-color;
-  background-color: @bg-color;
-  border: 2px solid @border-color;
-  border-right: 1px solid @border-color;
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
-  font-weight: bold;
-  /*  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color; */
+  background: @memory;
+  padding-left: 1px;
+  padding-right: 0;
+}
+#memory.warning {
+  color: @warning;
+}
+#memory.critical {
+  color: @critical;
 }
 
-#disk {
-  color: @text-color;
-  background-color: @bg-color;
-  border: 2px solid @border-color;
-  border-right: none;
-  border-radius: 0px 12px 12px 0px;
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
-  font-weight: bold;
-  border-right: solid 1px @border-color;
-  /*  text-shadow: 0 0 5px @muted-text-color, 0 0 5px @muted-text-color; */
+/* == CPU == */
+
+#custom-left4 {
+  color: @cpu;
+  background: @memory;
+  padding-left: 3px;
+}
+#custom-cpu {
+  background: @cpu;
+}
+#custom-leftin1 {
+  color: @cpu;
+  font-size: 16.2pt;
+  margin-bottom: -2px;
+}
+
+/* == Distro Icon == */
+
+#custom-left5 {
+  color: @distro-bg;
+  background: @main-bg;
+  text-shadow: -2px 0 2px rgba(0, 0, 0, 0.6);
+  padding-left: 3px;
+}
+#idle_inhibitor {
+  color: @distro-fg;
+  background: @distro-bg;
+  font-size: 15pt;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding-right: 0;
+  padding-left: 3px;
+  text-shadow: 0 0 1.5px rgba(0, 0, 0, 1);
+}
+#custom-right2 {
+  color: @distro-bg;
+  background: @main-bg;
+}
+
+/* == Time == */
+
+#custom-rightin1 {
+  color: @time;
+  font-size: 16.2pt;
+  margin-bottom: -2px;
+}
+#clock.time {
+  background: @time;
+}
+#custom-right3 {
+  color: @time;
+  background: @date;
+}
+
+/* == Date == */
+
+#clock.date {
+  background: @date;
+}
+#clock.date:hover {
+  color: @hover-fg;
+  text-shadow: none;
+  box-shadow: none;
+}
+#custom-right4 {
+  color: @date;
+  background: @tray;
+}
+
+/* == Tray == */
+
+#custom-wifi {
+  padding-left: 5px;
+  padding-right: 8px;
+  background: @tray;
+}
+#custom-wifi:hover {
+  color: @hover-fg;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+#bluetooth {
+  padding-right: 5px;
+  background: @tray;
+}
+#bluetooth:hover {
+  color: @hover-fg;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+#custom-update {
+  padding-right: 8px;
+  background: @tray;
+}
+#custom-update:hover {
+  color: @hover-fg;
+  text-shadow: none;
+  box-shadow: none;
+}
+#custom-right5 {
+  color: @tray;
+  background: @main-bg;
+}
+
+/* == Media Info == */
+
+#custom-media {
+  background-color: @main-bg;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+#custom-media:hover {
+  color: @hover-fg;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+/* == Output Device == */
+
+#custom-left6 {
+  color: @pulseaudio;
+  background: @main-bg;
+  padding-left: 3px;
+}
+#pulseaudio {
+  background: @pulseaudio;
+}
+#pulseaudio:hover {
+  color: @hover-fg;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+/* == Brightness == */
+
+#custom-left7 {
+  color: @backlight;
+  background: @pulseaudio;
+  padding-left: 2px;
+}
+#custom-backlight {
+  background: @backlight;
+}
+
+/* == Battery == */
+
+#custom-left8 {
+  color: @battery;
+  background: @backlight;
+  padding-left: 2px;
+}
+#battery {
+  background: @battery;
+}
+#battery.full {
+  color: @full;
+}
+#battery.good {
+  color: @module-fg;
+}
+#battery.warning {
+  color: @warning;
+}
+#battery.critical {
+  color: @critical;
+}
+#battery.charging {
+  color: @charging;
+}
+
+/* == Power Button == */
+
+#custom-leftin2 {
+  color: @battery;
+  background: @main-bg;
+  font-size: 16.2pt;
+  margin-bottom: -2px;
+}
+#custom-power {
+  color: @main-bg;
+  background: @power;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 1px 0 2px 1px rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  margin: 2px 4px 2px 0;
+  padding-right: 6px;
+  padding-left: 9px;
+}
+#custom-power:hover {
+  color: @hover-fg;
+  background: @hover-bg;
+  text-shadow: none;
+  box-shadow: none;
 }

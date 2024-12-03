@@ -1,12 +1,46 @@
-@define-color bg-hover-color #b4f9f8;
-/* background color on hover for workspace */
-@define-color border-color #ca9ee6;
-/* Border color around modules */
-@define-color text-color #4fd6be;
-/* Its in the name.... */
-@define-color text-glow-color #ff9e64;
-/* Turn on text-shadow to make the text have a nice glowing effect. */
-@define-color tooltip-hover-color #41a6b5;
-/* WIP*** Tooltip BG color on mouse hover */
-@define-color bg-color #232136;
-@define-color bg-hover #191724;
+/* Catppuccin Machiatto Color Scheme for Waybar */
+
+/* Background and Foreground Colors */
+@define-color bg-color #24273a; /* Background color (Crust) */
+@define-color bg-hover #363a4f; /* Hover background color (Surface0) */
+@define-color bg-hover-color #8aadf4; /* Soft pink hover background */
+@define-color text-color #cad3f5; /* Text color (Text) */
+@define-color text-glow-color #f5a97f; /* Glowing text color (Peach) */
+@define-color border-color #7dc4e4; /* Border color (Sapphire) */
+@define-color border-color-primary #8aadf4; /* Border color for primary elements (Blue) */
+@define-color power-text-color #ed8796; /* Power-related text color (Red) */
+@define-color muted-text-color #b8c0e0; /* Muted text color (Subtext1) */
+@define-color tooltip-hover-color #939ab7; /* Tooltip hover background color (Overlay2) */
+
+/* Extra Colors from the Catppuccin Machiatto Palette */
+@define-color rosewater #f4dbd6; /* Soft pinkish beige (Rosewater) */
+@define-color flamingo #f0c6c6; /* Flamingo (light soft orange-pink) */
+@define-color pink #f5bde6; /* Pink (light peach/pink) */
+@define-color mauve #c6a0f6; /* Mauve (lavender) */
+@define-color red #ed8796; /* Red (warm red) */
+@define-color maroon #ee99a0; /* Maroon (soft reddish-pink) */
+@define-color peach #f5a97f; /* Peach (soft orange) */
+@define-color yellow #eed49f; /* Yellow (muted yellow) */
+@define-color green #a6da95; /* Green (soft minty green) */
+@define-color teal #8bd5ca; /* Teal (muted cyan) */
+@define-color sky #91d7e3; /* Sky (light cyan) */
+@define-color sapphire #7dc4e4; /* Sapphire (bright cyan) */
+@define-color blue #8aadf4; /* Blue (light blue) */
+@define-color lavender #b7bdf8; /* Lavender (light purple) */
+
+/* Primary Text and Background Colors */
+@define-color text-color-primary #cad3f5; /* Primary text color */
+@define-color text-color-secondary #b8c0e0; /* Secondary text color */
+@define-color bg-dark #24273a; /* Dark background color (Base) */
+@define-color bg-light #f5dbd1; /* Light background color (Rosewater) */
+
+/* Surface and Overlay Backgrounds for Panels */
+@define-color surface2 #5b6078; /* Surface2 (light grayish-blue) */
+@define-color surface1 #494d64; /* Surface1 (muted gray-blue) */
+@define-color surface0 #363a4f; /* Surface0 (darker grayish-blue) */
+@define-color overlay2 #939ab7; /* Overlay2 (light muted gray) */
+@define-color overlay1 #8087a2; /* Overlay1 (muted gray) */
+@define-color overlay0 #6e738d; /* Overlay0 (dark muted gray) */
+@define-color mantle #1e2030; /* Mantle (dark grayish blue) */
+@define-color crust #181926; /* Crust (deepest dark color) */
+

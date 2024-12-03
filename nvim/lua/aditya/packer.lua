@@ -12,18 +12,20 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     --use { "folke/tokyonight.nvim", as = "tokyonight" , config = function() vim.cmd("colorscheme tokyonight") end}
---    use { "rose-pine/neovim", as = "rose-pine" , config = function() vim.cmd("colorscheme rose-pine") end}
-    use { "catppuccin/nvim", as = "catppuccin" , config = function() vim.cmd("colorscheme catppuccin-macchiato") end}
+    --    use { "rose-pine/neovim", as = "rose-pine" , config = function() vim.cmd("colorscheme rose-pine") end}
+    --    use { "catppuccin/nvim", as = "catppuccin" , config = function() vim.cmd("colorscheme catppuccin-macchiato") end}
+    -- Using Packer
+    use{'navarasu/onedark.nvim', as = "onedark", config = function() vim.cmd("colorscheme onedark") end}
     use('nvim-treesitter/playground')
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use({'VonHeikemen/lsp-zero.nvim'})
     use {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = function()
-        require("nvim-autopairs").setup {}
-    end
-}
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
     use({'neovim/nvim-lspconfig'})
     use({'williamboman/mason.nvim'})
     use({'williamboman/mason-lspconfig.nvim'})
@@ -36,7 +38,7 @@ return require('packer').startup(function(use)
     -- Snippets
     use({'L3MON4D3/LuaSnip'})
     use({'saadparwaiz1/cmp_luasnip'})
-       use {
+    use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
